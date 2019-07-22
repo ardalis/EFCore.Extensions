@@ -14,16 +14,16 @@ namespace Ardalis.EFCore.Extensions
         /// Applies all configurations defined in this assembly.
         /// </summary>
         /// <param name="modelBuilder"></param>
-        /// <param name="assembly"></param>
+        /// <param name="assembly">Optional. The assembly in which the config classes are located.</param>
         /// <param name="configNamespace">Optional. If provided, only configurations in this namespace will be applied.</param>
-        public static void ApplyAllConfigurationsFromCurrentAssembly(this ModelBuilder modelBuilder, Assembly assembly, string configNamespace = "")
+        public static void ApplyAllConfigurationsFromCurrentAssembly(this ModelBuilder modelBuilder, Assembly assembly = null, string configNamespace = "")
         {
             var applyGenericMethods = typeof(ModelBuilder).GetMethods(BindingFlags.Instance | BindingFlags.Public | BindingFlags.FlattenHierarchy);
             var applyGenericApplyConfigurationMethods = applyGenericMethods.Where(m => m.IsGenericMethod && m.Name.Equals("ApplyConfiguration", StringComparison.OrdinalIgnoreCase));
             var applyGenericMethod = applyGenericApplyConfigurationMethods.Where(m => m.GetParameters().FirstOrDefault().ParameterType.Name == "IEntityTypeConfiguration`1").FirstOrDefault();
 
-
-            var applicableTypes = assembly
+            var assemblyToUse = assembly ?? Assembly.GetExecutingAssembly();
+            var applicableTypes = assemblyToUse
                 .GetTypes()
                 .Where(c => c.IsClass && !c.IsAbstract && !c.ContainsGenericParameters);
 
