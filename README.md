@@ -25,6 +25,6 @@ namespace YourNamespace
             // ApplyConfiguration calls must follow base.OnModelCreating()
             builder.ApplyAllConfigurationsFromCurrentAssembly();
         }
-        }
     }
+}
 ```
