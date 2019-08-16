@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 
@@ -22,7 +23,8 @@ namespace Ardalis.EFCore.Extensions
             var applyGenericApplyConfigurationMethods = applyGenericMethods.Where(m => m.IsGenericMethod && m.Name.Equals("ApplyConfiguration", StringComparison.OrdinalIgnoreCase));
             var applyGenericMethod = applyGenericApplyConfigurationMethods.Where(m => m.GetParameters().FirstOrDefault().ParameterType.Name == "IEntityTypeConfiguration`1").FirstOrDefault();
 
-            var assemblyToUse = assembly ?? Assembly.GetExecutingAssembly();
+            var callingAssembly = new StackFrame(1).GetMethod().DeclaringType.Assembly;
+            var assemblyToUse = assembly ?? callingAssembly;
             var applicableTypes = assemblyToUse
                 .GetTypes()
                 .Where(c => c.IsClass && !c.IsAbstract && !c.ContainsGenericParameters);

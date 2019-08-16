@@ -24,7 +24,18 @@ namespace YourNamespace
         
             // ApplyConfiguration calls must follow base.OnModelCreating()
             builder.ApplyAllConfigurationsFromCurrentAssembly();
+
+			// Apply configurations in a different assembly - just reference a type in that assembly
+			modelBuilder.ApplyAllConfigurationsFromCurrentAssembly(typeof(ToDoItem).Assembly);
         }
     }
 }
+```
+
+## To Test, Run Migrations
+
+A sample migration script to add migrations to a [Clean Architecture](https://github.com/ardalis/CleanArchitecture) solution template is shown here (run from the solution root):
+
+```
+dotnet ef migrations add Initial -p .\src\CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj -s .\src\CleanArchitecture.Web\CleanArchitecture.Web.csproj -o Data/Migrations
 ```
