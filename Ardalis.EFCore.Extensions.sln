@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29111.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ardalis.EFCore.Extensions", "src\Ardalis.EFCore.Extensions\Ardalis.EFCore.Extensions.csproj", "{D808AD83-9BC0-4164-94B2-207A4F2F6118}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ardalis.EFCore.Extensions", "src\Ardalis.EFCore.Extensions\Ardalis.EFCore.Extensions.csproj", "{D808AD83-9BC0-4164-94B2-207A4F2F6118}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5970D2F1-648B-45CB-9966-B044C21870D0}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
