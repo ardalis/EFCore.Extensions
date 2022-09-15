@@ -1,30 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageId>Ardalis.EFCore.Extensions</PackageId>
-    <Title>Ardalis.EFCore.Extensions</Title>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Authors>Steve Smith (@ardalis)</Authors>
-    <Company>Ardalis.com</Company>
-    <PackageProjectUrl>https://github.com/ardalis/EFCore.Extensions</PackageProjectUrl>
-    <Description>A simple package with useful extension methods for EF Core.</Description>
-    <Summary>A simple package with useful extension methods for EF Core</Summary>
-    <RepositoryUrl>https://github.com/ardalis/EFCore.Extensions</RepositoryUrl>
-    <PackageTags>EFCore;Extensions;repository;ddd;ef;entity framework;entity framework core;extension methods</PackageTags>
-    <PackageReleaseNotes>Fixed issue ApplyAllConfigurationsFromCurrentAssembly when not passing an assembly.</PackageReleaseNotes>
-    <Version>1.1.0</Version>
-    <AssemblyName>Ardalis.EFCore.Extensions</AssemblyName>
-    <PackageIconUrl>https://user-images.githubusercontent.com/782127/33497760-facf6550-d69c-11e7-94e4-b3856da259a9.png</PackageIconUrl>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-    <LangVersion>7.3</LangVersion>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6</TargetFramework>
+		<Nullable>enable</Nullable>
+		<PackageId>Ardalis.EFCore.Extensions</PackageId>
+		<Title>Ardalis.EFCore.Extensions</Title>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Authors>Steve Smith (@ardalis)</Authors>
+		<Company>Ardalis.com</Company>
+		<PackageProjectUrl>https://github.com/ardalis/EFCore.Extensions</PackageProjectUrl>
+		<Description>A simple package with useful extension methods for EF Core.</Description>
+		<Summary>A simple package with useful extension methods for EF Core</Summary>
+		<RepositoryUrl>https://github.com/ardalis/EFCore.Extensions</RepositoryUrl>
+		<PackageTags>EFCore;Extensions;repository;ddd;ef;entity framework;entity framework core;extension methods</PackageTags>
+		<PackageReleaseNotes>Replacing with wrapper around EF Core functionality</PackageReleaseNotes>
+		<Version>6.0.0</Version>
+		<AssemblyName>Ardalis.EFCore.Extensions</AssemblyName>
+		<PackageIconUrl>https://user-images.githubusercontent.com/782127/33497760-facf6550-d69c-11e7-94e4-b3856da259a9.png</PackageIconUrl>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+		<LangVersion>10</LangVersion>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
+	</ItemGroup>
 
 </Project>
